@@ -251,12 +251,11 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 		if refreshControl?.isRefreshing == true {
 			return false
 		}
-		
-		let scrollFrame = UIEdgeInsetsInsetRect(scrollView.bounds, scrollViewContentInset)
-		let scrollableAmount: CGFloat = scrollView.contentSize.height - scrollFrame.height
-		let scrollViewIsSuffecientlyLong: Bool = scrollableAmount > navBarController.totalHeight() * 3
-		
-		return isViewControllerVisible() && scrollViewIsSuffecientlyLong && !isUpdatingValues
+        
+        let scrollableAmount: CGFloat = scrollView.contentSize.height
+        let scrollViewIsSuffecientlyLong: Bool = scrollableAmount > navBarController.totalHeight() * 3
+        return isViewControllerVisible() && scrollViewIsSuffecientlyLong && !isUpdatingValues
+
 	}
 	
 	fileprivate func handleScrolling(){
