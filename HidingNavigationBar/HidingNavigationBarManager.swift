@@ -60,7 +60,7 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 	fileprivate var previousState = HidingNavigationBarState.Open
     
 	//Gesture
-	fileprivate var panGesture: UIPanGestureRecognizer?
+	fileprivate weak var panGesture: UIPanGestureRecognizer?
 
 	//Options
 	open var onForegroundAction = HidingNavigationForegroundAction.default
